@@ -7,6 +7,7 @@ import {
 import Layout from './components/Layout';
 import HomePage from './containers/Homepage';
 import ProductDetail from './containers/ProductDetail';
+import InfoDetail from './containers/InfoDetail';
 function App() {
   return (
     <Layout>
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/product-detail">
             <ProductDetail />
+          </Route>
+          <Route path="/info-detail">
+            <InfoDetail />
           </Route>
         </Switch>
       </Router>
