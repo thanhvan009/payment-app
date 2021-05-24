@@ -1,6 +1,13 @@
+import './Slide_HomePage/styled';
+import SimpleSlider from './Slide_HomePage/SlideView';
+
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      HomePage
+      <SimpleSlider />
+      </div>
+    
   );
 }
 
