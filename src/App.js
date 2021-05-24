@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import HomePage from './containers/Homepage';
 import ProductDetail from './containers/ProductDetail';
 import InfoDetail from './containers/InfoDetail';
+import CheckoutPage from './containers/CheckoutPage'
 function App() {
   return (
     <Layout>
@@ -21,6 +22,8 @@ function App() {
           </Route>
           <Route path="/info-detail">
             <InfoDetail />
+          </Route>
+          <Route path="/checkout" component={CheckoutPage}>
           </Route>
         </Switch>
       </Router>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { StyledInfoDetail } from './styled';
 function InfoDetail() {
   return (
@@ -15,7 +16,18 @@ function InfoDetail() {
           <img src={window.location.origin  + '/images/star.svg'} className="star" alt="star" />
           <img src={window.location.origin  + '/images/star.svg'} className="star" alt="star" />
         </div>
-        <button className="pay-btn">Pay</button>
+        <Link
+          to={{
+            pathname: "/checkout",
+            state: {
+              price: "61.19$",
+              title: "Printed Chiffon Dress copy 2",
+              imgUrl: `${window.location.origin}/images/product1.png`,
+            },
+          }}
+        >
+          <button className="pay-btn">Pay</button>
+        </Link>
       </div>
     </StyledInfoDetail>
   );
