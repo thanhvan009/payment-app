@@ -3,7 +3,7 @@ import Button from './../../components/Button';
 function ProductDetail() {
   return (
     <StyledProductDetail className="product-detail">
-        <Button text="Checkout" />
+        <Button />
     </StyledProductDetail>
   );
 }

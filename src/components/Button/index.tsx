@@ -1,21 +1,16 @@
-import React from 'react';
-import { StyledButton } from './styled';
+import React from "react";
+import { StyledButton } from "./styled";
 
-interface ButtonProps {
-  className?: string;
-  text: string;
-  onClick?: () => void;
-};
-const Button = (props: ButtonProps) => {
-  const { className, text, onClick } = props;
-  return (
-    <StyledButton
-      className={className}
-      onClick={onClick}
-    >
-      {text}
-    </StyledButton>
-  );
+const Button = () => {
+  return <StyledButton>
+    <p>HOME</p>
+    <p>SHOP</p>
+    <p>FEATURES</p>
+    <p>MEGA GROUP</p>
+    <p>ABOUT</p>
+    <p>BLOG</p>
+    <p>CONTACT</p>
+  </StyledButton>;
 };
 
 export default Button;
