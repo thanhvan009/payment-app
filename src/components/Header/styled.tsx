@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
+  background-color: white;
   .row {
     display: flex;
   }

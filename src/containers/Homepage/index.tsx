@@ -1,10 +1,14 @@
-import Header from "./../../components/Header";
-function Homepage() {
+import "./Slide_HomePage/styled";
+import SimpleSlider from "./Slide_HomePage/SlideView";
+import Button from "./../../components/Button/index";
+
+function HomePage() {
   return (
     <div>
-      <Header />
+      <Button />
+      <SimpleSlider />
     </div>
   );
 }
 
-export default Homepage;
+export default HomePage;
