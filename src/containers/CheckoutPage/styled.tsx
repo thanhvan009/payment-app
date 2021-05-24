@@ -25,8 +25,15 @@ export const StyledCheckoutPage = styled.div`
   }
 
   .checkout-page__payment-method {
-    Button {
+    button {
+      background-color: #ff5a5a;
+      color: white;
+      height: 30px;
+      width: 120px;
       margin: 10px;
+      border: none;
+      outline: none;
+      cursor: pointer;
       :hover  {
         font-size: 16px;
       }

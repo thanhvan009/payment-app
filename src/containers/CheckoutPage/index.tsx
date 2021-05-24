@@ -1,4 +1,3 @@
-import Button from "../../components/Button";
 import { StyledCheckoutPage } from "./styled";
 
 function CheckoutPage(props: any) {
@@ -18,8 +17,8 @@ function CheckoutPage(props: any) {
           {props.location.state.price}
         </div>
         <div className="checkout-page__payment-method">
-            <Button text="Paypal"></Button>
-            <Button text="Stripe"></Button>
+          <button>Paypal</button>
+          <button>Stripe</button>
         </div>
       </div>
     </StyledCheckoutPage>
