@@ -1,19 +1,29 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const StyledButton = styled.button`
-  border-radius: 0;
-  border: none;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #db3737;
-  color: #fff;
-  height: 30px;
-  min-width: 100px;
-  transition: all 0.2s ease;
-  text-align: center;
+export const StyledButton = styled.div`
+  div {
+    display: flex;
+    background-color: black;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
 
-  &.primary {
-    background-color: green;
+  p {
+    color: white;
+    padding: 0 20px;
+  }
+
+  p:hover {
+    cursor: pointer;
+    color: yellow;
+  }
+
+  .btn {
+    color: white;
+    background-color: red;
+    height: 100%;
+    width: 200px;
+    text-align: center;
   }
 `;

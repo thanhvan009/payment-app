@@ -1,13 +1,13 @@
-import './Slide_HomePage/styled';
-import SimpleSlider from './Slide_HomePage/SlideView';
+import "./Slide_HomePage/styled";
+import SimpleSlider from "./Slide_HomePage/SlideView";
+import Button from "./../../components/Button/index";
 
 function HomePage() {
   return (
     <div>
-      HomePage
+      <Button />
       <SimpleSlider />
-      </div>
-    
+    </div>
   );
 }
 
