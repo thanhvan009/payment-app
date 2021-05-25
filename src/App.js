@@ -1,14 +1,11 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
-import Layout from './components/Layout';
-import HomePage from './containers/Homepage';
-import ProductDetail from './containers/ProductDetail';
-import InfoDetail from './containers/InfoDetail';
-import CheckoutPage from './containers/CheckoutPage'
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./containers/Homepage";
+import ProductDetail from "./containers/ProductDetail";
+import InfoDetail from "./containers/InfoDetail";
+import Success from "./containers/Checkout/Success";
+import Error from "./containers/Checkout/Error";
 function App() {
   return (
     <Layout>
@@ -23,7 +20,11 @@ function App() {
           <Route path="/info-detail">
             <InfoDetail />
           </Route>
-          <Route path="/checkout" component={CheckoutPage}>
+          <Route path="/checkout/success">
+            <Success />
+          </Route>
+          <Route path="/checkout/error">
+            <Error />
           </Route>
         </Switch>
       </Router>
