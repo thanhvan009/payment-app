@@ -1,5 +1,6 @@
+import { StyledSuccess } from './styled';
 function Success() {
-    return (<h1>Checkout Successfully</h1>);
+    return (<StyledSuccess>Checkout Successfully</StyledSuccess>);
 }
 
-export default Success
+export default Success;

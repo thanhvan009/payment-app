@@ -51,9 +51,15 @@ export const StyledInfoDetail = styled.div`
     font-size: 13px;
     margin-top: 40px;
     cursor: pointer;
+    min-width: 150px;
+    border-radius: 5px;
     transition: all 0.3s ease;
     &:hover {
       background-color: #c33434;
     }
+  }
+
+  .paypal-buttons {
+    margin-top: 10px;
   }
 `;
