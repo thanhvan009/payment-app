@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { StyledInfoDetail } from './styled';
 import { loadStripe } from '@stripe/stripe-js';
+import Paypal from './../../components/Paypal';
+import { OnApproveData } from '@paypal/paypal-js/types/components/buttons';
+import { useHistory } from "react-router-dom";
 
 // interface Product {
 //   id: number,
@@ -10,6 +13,9 @@ import { loadStripe } from '@stripe/stripe-js';
 
 function InfoDetail() {
   const [product, setProduct] = useState({name: '', id: 0, price: 0});
+  const [paid, setPaid] = useState(false);
+  const history = useHistory();
+
   const url = "http://localhost:5000/api/product";
   const checkoutUrl = "http://localhost:5000/api/checkout";
   useEffect(()=>{
@@ -43,6 +49,15 @@ function InfoDetail() {
     });
   }
 
+  const onApprove = async (data: OnApproveData, actions: { order: any; }) => {
+    const order = await actions.order.capture();
+    setPaid(true);
+    console.log(order);
+    if (order) {
+      history.push("/checkout/success");
+    }
+  }
+
   return (
     <StyledInfoDetail>
       <div className="image-wrap">
@@ -59,6 +74,7 @@ function InfoDetail() {
           <img src={window.location.origin  + '/images/star.svg'} className="star" alt="star" />
         </div>
         <button onClick={onClickPayment} className="pay-btn">Pay</button>
+        <Paypal onApprove={onApprove} />
       </div>
     </StyledInfoDetail>
   );
