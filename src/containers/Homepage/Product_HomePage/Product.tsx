@@ -1,57 +1,57 @@
-import React, { Component } from "react";
-import { ReactDOM } from "react";
-import { StyledProduc } from "./StyledProduct";
+import { Component } from "react";
+import { Link } from "react-router-dom";
+import { StyledProduct } from "./StyledProduct";
 
-export class Product extends Component
-{
-        
-    
-    render(){
-        const imageProduct = [
-            '/images/product_1.jpg',
-            '/images/product_2.jpg',
-            '/images/product_3.jpg',
-            '/images/product_4.jpg'
-    
-         ]
-
-        return <StyledProduc>
+type ProductInfo = {
+  id: any;
+  price: number;
+  name: string;
+};
+export class Product extends Component {
+  state: { productList: ProductInfo[] } = {
+    productList: [],
+  };
+  url = "http://localhost:5000/api/product/list";
+  componentDidMount() {
+    fetch(this.url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => this.setState({ productList: data }))
+      .catch((err) => console.log(err));
+  }
+  render() {
+    return (
+      <StyledProduct>
         <div className="container_product">
-            <div className="products">
-                <img className="product_image" src={window.location.origin+imageProduct[0]}/>
-                <p className="product_name"> winter clothes</p>
-                <div className="product_content"> 
-                   <p>8000 VNĐ</p>
-                   <button className="btn_AddCard">Add to card</button>
+          {this.state.productList.map((product: ProductInfo) => {
+            return (
+              <div className="products" key={product.id}>
+                <img
+                  className="product_image"
+                  src={`${window.location.origin}/images/product1.png`}
+                />
+                <p className="product_name">{product.name}</p>
+                <div className="product_content">
+                  <p>${product.price}</p>
+                  <Link
+                    to={{
+                      pathname: "info-detail",
+                      state: {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                      },
+                    }}
+                  >
+                    <button className="btn_AddCard">More info</button>
+                  </Link>
                 </div>
-            </div>
-            <div className="products">
-                <img className="product_image" src={window.location.origin+imageProduct[1]}/>
-                <p className="product_name"> winter clothes</p>
-                <div className="product_content"> 
-                   <p>8000 VNĐ</p>
-                   <button className="btn_AddCard">Add to card</button>
-                </div>
-            </div>
-            <div className="products">
-                <img className="product_image" src={window.location.origin+imageProduct[2]}/>
-                <p className="product_name"> winter clothes</p>
-                <div className="product_content"> 
-                   <p>8000 VNĐ</p>
-                   <button className="btn_AddCard">Add to card</button>
-                </div>
-            </div>
-            <div className="products">
-                <img className="product_image" src={window.location.origin+imageProduct[3]}/>
-                <p className="product_name"> winter clothes</p>
-                <div className="product_content"> 
-                   <p>8000 VNĐ</p>
-                   <button className="btn_AddCard">Add to card</button>
-                </div>
-            </div>
-  
+              </div>
+            );
+          })}
         </div>
-        </StyledProduc>
-        
-    }
+      </StyledProduct>
+    );
+  }
 }
