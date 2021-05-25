@@ -1,12 +1,9 @@
 import React from 'react';
-import { StyledFooter } from './styled';
+import Header from './../Header'
 
 const Footer = () => {
   return (
-      <StyledFooter>
-        Footer
-
-      </StyledFooter>
+    <Header />
   );
 }
 export default Footer;
