@@ -1,54 +1,46 @@
-import React, { Component } from "react";
-import { ReactDOM } from "react";
+import { Component } from "react";
 import { Link } from "react-router-dom";
 import { StyledProduct } from "./StyledProduct";
 
+type ProductInfo = {
+  id: any;
+  price: number;
+  name: string;
+};
 export class Product extends Component {
+  state: { productList: ProductInfo[] } = {
+    productList: [],
+  };
+  url = "http://localhost:5000/api/product/list";
+  componentDidMount() {
+    fetch(this.url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => this.setState({ productList: data }))
+      .catch((err) => console.log(err));
+  }
   render() {
-    const products = [
-      {
-        id: 1,
-        name: "Spring clothes",
-        price: 200000,
-        imgSrc: `${window.location.origin}/images/product_1.jpg`,
-      },
-      {
-        id: 2,
-        name: "Summer clothes",
-        price: 600000,
-        imgSrc: `${window.location.origin}/images/product_2.jpg`,
-      },
-      {
-        id: 3,
-        name: "Autumn clothes",
-        price: 400000,
-        imgSrc: `${window.location.origin}/images/product_3.jpg`,
-      },
-      {
-        id: 4,
-        name: "Winter clothes",
-        price: 300000,
-        imgSrc: `${window.location.origin}/images/product_4.jpg`,
-      },
-    ];
-
     return (
       <StyledProduct>
         <div className="container_product">
-          {products.map((product) => {
+          {this.state.productList.map((product: ProductInfo) => {
             return (
               <div className="products" key={product.id}>
-                <img className="product_image" src={product.imgSrc} />
+                <img
+                  className="product_image"
+                  src={`${window.location.origin}/images/product1.png`}
+                />
                 <p className="product_name">{product.name}</p>
                 <div className="product_content">
-                  <p>{product.price} VNĐ</p>
+                  <p>${product.price}</p>
                   <Link
                     to={{
                       pathname: "info-detail",
                       state: {
+                        id: product.id,
                         name: product.name,
                         price: product.price,
-                        imgSrc: product.imgSrc,
                       },
                     }}
                   >

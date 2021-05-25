@@ -9,6 +9,7 @@ export const StyledProduct = styled.div`
       min-height: 24em;
       width: auto;
       padding-top:1em;
+      flex-wrap: wrap;
       .products
       {
         background-color:#fffbfb;
