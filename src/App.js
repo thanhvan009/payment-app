@@ -17,8 +17,7 @@ function App() {
           <Route path="/product-detail/:product_id">
             <ProductDetail />
           </Route>
-          <Route path="/info-detail">
-            <InfoDetail />
+          <Route path="/info-detail" component={InfoDetail}>
           </Route>
           <Route path="/checkout/success">
             <Success />
