@@ -12,8 +12,8 @@ export const StyledProduct = styled.div`
       flex-wrap: wrap;
       .products
       {
-        background-color:#fffbfb;
-         width: 100% ;
+        background-color:#f3eeee;
+         width: 22% ;
           height : 30%;;
           margin:1em;
           position:relative ;
@@ -63,6 +63,7 @@ export const StyledProduct = styled.div`
     .products{
       display: flex;
       align-items: center;
+      width : 100%;
       .product_image
       {
         max-width: 22%;
@@ -86,6 +87,7 @@ export const StyledProduct = styled.div`
         top: 31%;
         left: 27%;
       }
+     
      
     }
   
