@@ -17,7 +17,7 @@ import {
 
 const Header = () => {
   return (
-    <StyledHeader>
+    <StyledHeader >
       {/* Top message */}
       <div className="row">
         <div className="col col-left">

@@ -5,14 +5,14 @@ export const StyledProduc = styled.div`
   .container_product
   {
       display:flex;
-      flex-direction:center;
+      flex-direction:row;
       min-height: 24em;
       width: auto;
       padding-top:1em;
       .products
       {
         background-color:#fffbfb;
-         width: 30% ;
+         width: 100% ;
           height : 30%;;
           margin:1em;
           position:relative ;
@@ -56,4 +56,38 @@ export const StyledProduc = styled.div`
         background-color: #ff5a5a;
       }
  }
+ @media (max-width: 800px) {
+  .container_product {
+    flex-direction: column;
+    .products{
+      display: flex;
+      align-items: center;
+      .product_image
+      {
+        max-width: 22%;
+  
+      }
+      .product_name
+      {
+        position:absolute;
+        left :18em;
+        top:2em;
+      }
+      .btn_AddCard
+      {
+        position:absolute;
+        left :70%;
+        top:19em;
+      }
+      .price
+      {
+        position:absolute;
+        top: 31%;
+        left: 27%;
+      }
+     
+    }
+  
+  }
+}
 `;

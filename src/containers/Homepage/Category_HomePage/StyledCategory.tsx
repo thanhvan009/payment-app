@@ -9,15 +9,14 @@ export const StyledCategory = styled.div`
      height :16em;
     .category
     {
-     background-color : red;
-     height : 100%;
+     height : auto;
      width : 30% ;
      margin : 1em;
      position :relative;
     
     }
     .image_category{
-        height: 100%;
+        height: auto;
         width: 100%;
     }
     .btn_category

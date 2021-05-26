@@ -19,9 +19,9 @@ export class Product extends Component
         <div className="container_product">
             <div className="products">
                 <img className="product_image" src={window.location.origin+imageProduct[0]}/>
-                <p className="product_name"> winter clothes</p>
+                <p className="product_name"> winter clothes </p>
                 <div className="product_content"> 
-                   <p>8000 VNĐ</p>
+                   <p className="price">8000 VNĐ</p>
                    <button className="btn_AddCard">Add to card</button>
                 </div>
             </div>
@@ -29,7 +29,7 @@ export class Product extends Component
                 <img className="product_image" src={window.location.origin+imageProduct[1]}/>
                 <p className="product_name"> winter clothes</p>
                 <div className="product_content"> 
-                   <p>8000 VNĐ</p>
+                   <p className="price">8000 VNĐ</p>
                    <button className="btn_AddCard">Add to card</button>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export class Product extends Component
                 <img className="product_image" src={window.location.origin+imageProduct[2]}/>
                 <p className="product_name"> winter clothes</p>
                 <div className="product_content"> 
-                   <p>8000 VNĐ</p>
+                   <p className="price">8000 VNĐ</p>
                    <button className="btn_AddCard">Add to card</button>
                 </div>
             </div>
@@ -45,7 +45,7 @@ export class Product extends Component
                 <img className="product_image" src={window.location.origin+imageProduct[3]}/>
                 <p className="product_name"> winter clothes</p>
                 <div className="product_content"> 
-                   <p>8000 VNĐ</p>
+                   <p className="price">8000 VNĐ</p>
                    <button className="btn_AddCard">Add to card</button>
                 </div>
             </div>
