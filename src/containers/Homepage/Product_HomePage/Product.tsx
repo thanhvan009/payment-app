@@ -33,7 +33,7 @@ export class Product extends Component {
                 />
                 <p className="product_name">{product.name}</p>
                 <div className="product_content">
-                  <p>${product.price}</p>
+                  <p className="price">${product.price}</p>
                   <Link
                     to={{
                       pathname: "info-detail",
