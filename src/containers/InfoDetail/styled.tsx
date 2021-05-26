@@ -1,65 +1,97 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledInfoDetail = styled.div`
-  display: flex;
-  background-color: #fff;
-  h1 {
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: rgb(36, 36, 36);
+  .container {
+    margin: 20px;
+    height: 600px;
+    background-color: #f5f5f5;
+  }
+
+  .content {
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    background-color: #ffffff;
+    display: flex;
+  }
+
+  .left-content {
+    flex-basis: 40%;
+    height: 100%;
+  }
+
+  .image-container {
+    height: 60%;
+    overflow: hidden;
+    position: relative;
+    margin: 40px 20px 0;
+}
+  .image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    cursor: pointer;
+    :hover {
+      transform: scale(1.1, 1.1) translateZ(0);
+    }
+  }
+
+  .right-content {
+    flex-basis: 60%;
+    height: 100%;
+    margin: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .price {
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #333;
-  }
+    margin-top: 30px;
+    padding: 15px;
+    width: auto;
+    background-color: #fafafa;
+    height: auto;
+    font-size: 18px;
 
-  .image-wrap {
-    width: 257px;
-    height: 300px;
-    cursor: pointer;
-    overflow: hidden;
-    img {
-      height: auto;
-      width: 100%;
-      transform: scale(1, 1);
-      transition: all 0.3s ease;
-    }
-    &:hover {
-      img {
-        transform: scale(1.1,1.1) translateZ(0);
-      }
+    span {
+      color: red;
+      font-weight: bold;
     }
   }
 
   .info {
-    padding: 20px;
+    margin-top: 30px;
+    padding: 0 20px;
   }
 
-  .rating {
-    margin-left: -1px;
-  }
-
-  button {
-    color: #fff;
-    background-color: #db3737;
-    border: none;
-    min-width: 100px;
-    padding: 5px;
-    font-size: 13px;
-    margin-top: 40px;
-    cursor: pointer;
-    min-width: 150px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    &:hover {
-      background-color: #c33434;
+  .payment {
+    margin-top: 30px;
+    padding: 0 20px;
+    button {
+      font-size: 14px;
+      height: 40px;
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px;
+      background-color: #f73434;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      color: white;
+      border-radius: 5px;
+      margin: 10px 0;
+      :hover {
+        background-color: #ff5e5e;
+      }
+      :active {
+        background-color: #c40000;
+      }
     }
-  }
-
-  .paypal-buttons {
-    margin-top: 10px;
   }
 `;

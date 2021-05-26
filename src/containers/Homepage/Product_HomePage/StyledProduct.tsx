@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const StyledProduc = styled.div`
+export const StyledProduct = styled.div`
   .container_product
   {
       display:flex;
@@ -9,6 +9,7 @@ export const StyledProduc = styled.div`
       min-height: 24em;
       width: auto;
       padding-top:1em;
+      flex-wrap: wrap;
       .products
       {
         background-color:#fffbfb;
