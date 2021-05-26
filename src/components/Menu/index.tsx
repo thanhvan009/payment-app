@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledButton } from "./styled";
 
-const Button = () => {
+const Menu = () => {
   return (
-    <StyledButton>
+    <StyledButton >
       <div className="menu">
         <p>HOME</p>
         <p>SHOP</p>
@@ -20,4 +20,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default Menu;

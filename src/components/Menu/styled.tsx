@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
   div {
     display: flex;
     background-color: black;

@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
+  @media (max-width: 800px) 
+  {
+    display:none;
+  }
+
   background-color: white;
   .row {
     display: flex;
