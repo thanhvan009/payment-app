@@ -57,7 +57,7 @@ export const StyledProduct = styled.div`
         background-color: #ff5a5a;
       }
  }
- @media (max-width: 800px) {
+ @media  (max-width: 767px) {
   .container_product {
     flex-direction: column;
     .products{

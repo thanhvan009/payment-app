@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 767px) {
     display: none;
   }
   div {
