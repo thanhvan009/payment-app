@@ -1,26 +1,51 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.div`
-  .btn_open{
-    display: none;
+  .bm-menu-wrap {
+    width: 39em !important;
   }
-  @media (max-width: 767px) {
-    .container_slideMenu{
-      background-color:#ff23239e;
-      width:100%;
-      min-height:10em;
 
-      .btn_open {
-        display: block;
-        min-height:12em;
-        min-width: 10em;
-        background-color: #ff9595;
-        border-radius: 20px;
-        margin-left: 1%;
-        border:none
+  .btn_open {
+    display: none;
+    width:0%;
+  }
+
+  @media (max-width: 767px) {
+    .btn_open {
+      display: block;
+      height: 12em;
+      width: 100%;
+      background-image: linear-gradient(to right,white ,snow);
+      border: none;
+      position: relative;
+      .col{
+        height: 100%;
+        position: absolute;
+        .logo{
+          height: 100%;
+        }
+      }
+      
+    }
+
+    .container_slideMenu{
+      background-image: linear-gradient(to left,#fff6f6 ,#ffffff);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      margin-left: 0px;
+      padding-top: 50%;
+      padding-left: 2%;
+      .select_menu{
+        height: 3%;
+        font-size: 58px;
+        font-weight: 600;
+        text-align: left;
+        text-tranform : capitalize;
+        padding: 0.8em;
       }
     }
   }
- 
-
 `

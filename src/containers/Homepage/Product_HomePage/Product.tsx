@@ -11,7 +11,7 @@ export class Product extends Component {
   state: { productList: ProductInfo[] } = {
     productList: [],
   };
-  url = "http://localhost:5000/api/product/list";
+  url = "http://paymentapi-dev.ap-southeast-1.elasticbeanstalk.com/api/product/list";
   componentDidMount() {
     fetch(this.url)
       .then((res) => {
