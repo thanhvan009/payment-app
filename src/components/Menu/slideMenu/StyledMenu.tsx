@@ -48,6 +48,7 @@ export const StyledMenu = styled.div`
       margin-left: 0px;
       padding-top: 50%;
       padding-left: 2%;
+      color: #ff6161;
       .select_menu{
         height: 3%;
         font-size: 58px;
