@@ -8,9 +8,9 @@ export default class CategoryBanner extends Component
     render()
     {
         const images= [
-            '/images/category_1.jfif',
-            '/images/category_2.jpg',
-            '/images/category_3.jpg'
+            '/images/category_1_new.jpg',
+            '/images/category_2_new.jpg',
+            '/images/category_3_new.jpg'
         ]
         return  <StyledCategory>
         <div className="container_category">

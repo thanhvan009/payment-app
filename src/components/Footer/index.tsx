@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from './../Header'
-
+import { StyledFooter } from './styled';
+import { FooterHomePage } from './Footer_Hompage/FooterHomePage';
 const Footer = () => {
   return (
-    <Header />
+    
+      <StyledFooter>
+                <FooterHomePage />
+
+      </StyledFooter>
   );
 }
 export default Footer;

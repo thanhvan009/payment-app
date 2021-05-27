@@ -9,8 +9,8 @@ interface LayoutProps {
 const Layout = (props: LayoutProps) => {
   const { children } = props;
   return (
-    <StyledContainer>
-      <Header />
+    <StyledContainer >
+      <Header  />
       <div className="main-content">{children}</div>
       <Footer />
     </StyledContainer>

@@ -1,13 +1,15 @@
 import "./Slide_HomePage/styled";
 import SimpleSlider from "./Slide_HomePage/SlideView";
-import Button from "./../../components/Button/index";
+import Menu from "../../components/Menu/index";
 import CategoryBanner from "./../../containers/Homepage/Category_HomePage/Category";
 import { Product } from "./Product_HomePage/Product";
+import { SlideMenu } from "../../components/Menu/slideMenu/SlideMenu";
 
 function HomePage() {
   return (
     <div>
-      <Button />
+      <Menu />
+      <SlideMenu />
       <SimpleSlider />
       <CategoryBanner />
       <Product />
