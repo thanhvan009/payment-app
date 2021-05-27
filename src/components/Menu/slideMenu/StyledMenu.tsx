@@ -4,12 +4,10 @@ export const StyledMenu = styled.div`
   .bm-menu-wrap {
     width: 39em !important;
   }
-
   .btn_open {
     display: none;
     width:0%;
   }
-
   @media (max-width: 767px) {
     .btn_open {
       display: block;
@@ -25,9 +23,7 @@ export const StyledMenu = styled.div`
           height: 100%;
         }
       }
-      
     }
-
     .container_slideMenu{
       background-image: linear-gradient(to left,#fff6f6 ,#ffffff);
       height: 100%;

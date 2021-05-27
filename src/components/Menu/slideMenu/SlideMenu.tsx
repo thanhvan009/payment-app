@@ -15,18 +15,15 @@ export class SlideMenu extends Component
       state = {
         menuOpen: false
       }
-    
       handleStateChange (state:any) {
         this.setState({menuOpen: state.isOpen})  
-      }
-      
+      }   
       closeMenu () {
         this.setState({menuOpen: false})
       }
       toggleMenu () {
         this.setState((state:any) => ({menuOpen: !state.menuOpen}))
       }
-    
       render () {
         return (
             <StyledMenu>
@@ -55,7 +52,6 @@ export class SlideMenu extends Component
             </Menu>
           </div>
             </StyledMenu>
-         
         )
       }
 }
