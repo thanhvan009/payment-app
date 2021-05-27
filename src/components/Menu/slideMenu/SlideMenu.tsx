@@ -35,6 +35,11 @@ export class SlideMenu extends Component
               alt="logo.png"
             ></img>
            </div>
+           <div className="btn_openmenu">
+              <div className="burger_icon"></div>
+              <div className="burger_icon"></div>
+              <div className="burger_icon"></div>
+           </div>
             <Menu 
               isOpen={this.state.menuOpen}
               right
