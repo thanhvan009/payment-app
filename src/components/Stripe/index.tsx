@@ -1,5 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { StyledStripe } from "./styled";
+import { API_URL, STRIPE_PUBLIC_KEY } from "./../../constants/index";
 
 interface Product {
   id: number;
@@ -10,12 +11,10 @@ interface Product {
 function Stripe(props: { product: Product }) {
   const { product } = props;
 
-  const checkoutUrl = "http://localhost:5000/api/checkout";
+  const checkoutUrl = API_URL + "checkout";
 
   const onClickPayment = async () => {
-    const stripe = await loadStripe(
-      "pk_test_51IuZBIEtUd2UpeaGTbiK46UrBcqQBB3FhR0n9DTa043igqPMFRG5T0YZ2v9rmEljn7e5OO8YYbf5udQpZFWtUpo400TZZjrxLY"
-    );
+    const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
 
     const requestOptions = {
       method: "POST",

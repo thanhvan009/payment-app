@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { StyledProduct } from "./StyledProduct";
+import { API_URL } from "./../../../constants/index";
 
 type ProductInfo = {
   id: any;
@@ -11,10 +12,16 @@ export class Product extends Component {
   state: { productList: ProductInfo[] } = {
     productList: [],
   };
-  url = "http://localhost:5000/api/product/list";
+  url = API_URL + "product/list";
+
+  requestOptions = {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  };
   componentDidMount() {
-    fetch(this.url)
+    fetch(this.url, this.requestOptions)
       .then((res) => {
+        console.log(res);
         return res.json();
       })
       .then((data) => this.setState({ productList: data }))
@@ -30,6 +37,7 @@ export class Product extends Component {
                 <img
                   className="product_image"
                   src={`${window.location.origin}/images/product1.png`}
+                  alt="product"
                 />
                 <p className="product_name">{product.name}</p>
                 <div className="product_content">
