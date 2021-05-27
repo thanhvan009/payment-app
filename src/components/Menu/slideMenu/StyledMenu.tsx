@@ -8,7 +8,7 @@ export const StyledMenu = styled.div`
     display: none;
     width:0%;
   }
-  @media (max-width: 767px) {
+  @media  (max-width: 767px) {
     .btn_open {
       display: block;
       height: 12em;
@@ -16,6 +16,20 @@ export const StyledMenu = styled.div`
       background-image: linear-gradient(to right,white ,snow);
       border: none;
       position: relative;
+      .btn_openmenu{
+        height: auto;
+        width: auto;
+        background-color: white;
+        bottom: 3em;
+        position: absolute;
+        right: 2em;
+        .burger_icon{
+          width: 6em;
+          height: 15px;
+          background-color: #e0c3c3;
+          margin: 15px 0;
+        }
+      }
       .col{
         height: 100%;
         position: absolute;
@@ -34,6 +48,7 @@ export const StyledMenu = styled.div`
       margin-left: 0px;
       padding-top: 50%;
       padding-left: 2%;
+      color: #ff6161;
       .select_menu{
         height: 3%;
         font-size: 58px;
