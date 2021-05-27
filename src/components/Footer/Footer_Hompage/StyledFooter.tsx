@@ -22,7 +22,7 @@ export const StyledFooterHomePage = styled.div`
     {
         .container_footer{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             .content_footer{
                 width:30% ;
