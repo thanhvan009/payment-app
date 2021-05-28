@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { StyledStripe } from "./styled";
-import { API_URL, STRIPE_PUBLIC_KEY } from "./../../constants/index";
+import { APP_URL, API_URL, STRIPE_PUBLIC_KEY } from "./../../constants/index";
 
 interface Product {
   id: number;
@@ -8,8 +8,27 @@ interface Product {
   price: number;
 }
 
+interface StripeUrls {
+  successUrl: string;
+  cancelUrl: string;
+}
+
+interface StripeCheckoutRequest {
+  product: Product;
+  urls: StripeUrls;
+}
+
 function Stripe(props: { product: Product }) {
   const { product } = props;
+  const successUrl = APP_URL + "checkout/success";
+  const cancelUrl = APP_URL;
+  let request: StripeCheckoutRequest = {
+    product,
+    urls: {
+      successUrl,
+      cancelUrl,
+    },
+  };
 
   const checkoutUrl = API_URL + "checkout";
 
@@ -19,7 +38,7 @@ function Stripe(props: { product: Product }) {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product),
+      body: JSON.stringify(request),
     };
 
     fetch(checkoutUrl, requestOptions)
