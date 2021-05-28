@@ -33,7 +33,6 @@ const Header = () => {
           ONLINE SUPPORT 24/7
         </div>
       </div>
-
       {/* Logo + Search + Social Media Icons */}
       <div className="row row-logo">
         <div className="col">
@@ -44,7 +43,6 @@ const Header = () => {
             alt="logo.png"
           ></img>
           </a>
-      
         </div>
         <div className="col col-search">
           <input className="search-bar" placeholder="Search"></input>
