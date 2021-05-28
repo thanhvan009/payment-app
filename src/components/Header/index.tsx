@@ -36,7 +36,7 @@ const Header = () => {
       {/* Logo + Search + Social Media Icons */}
       <div className="row row-logo">
         <div className="col">
-          <a href="./">
+          <a href="/">
           <img
             className="logo"
             src="https://i.ibb.co/mNns8MQ/logo.png"
