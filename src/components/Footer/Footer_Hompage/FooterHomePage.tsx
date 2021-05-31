@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { ReactDOM } from "react";
+import { Component } from "react";
 import { StyledFooterHomePage } from "./StyledFooter";
 export class FooterHomePage extends Component
 {

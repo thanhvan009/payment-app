@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { ReactDOM } from "react";
+import { Component } from "react";
 import { StyledMenu } from "./StyledMenu";
 import { slide as Menu } from 'react-burger-menu'
 

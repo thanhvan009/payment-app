@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { StyledInfoDetail } from "./styled";
 import Paypal from "./../../components/Paypal";
 import { OnApproveData } from "@paypal/paypal-js/types/components/buttons";
@@ -13,7 +12,6 @@ type ProductInfo = {
 
 function InfoDetail() {
   // const [product, setProduct] = useState({ name: "", id: 0, price: 0 });
-  const [paid, setPaid] = useState(false);
   const history = useHistory();
   const location = useLocation();
   const { id, name, price } = location.state as ProductInfo;
@@ -29,8 +27,6 @@ function InfoDetail() {
   // }, []);
   const onApprove = async (data: OnApproveData, actions: { order: any }) => {
     const order = await actions.order.capture();
-    setPaid(true);
-    console.log(order);
     if (order) {
       history.push("/checkout/success");
     }

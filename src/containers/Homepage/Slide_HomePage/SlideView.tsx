@@ -26,19 +26,30 @@ export default class SimpleSlider extends Component {
         <Slider {...settings}>
           <div>
             <div className="slide-image" >
-              <img className="item_img" src={window.location.origin  + image[0]}/>
+              <img
+                className="item_img"
+                src={window.location.origin  + image[0]}
+                alt=""
+              />
             </div>
           </div>
           <div>
             <div className="slide-image" >
-            <img className="item_img" src={window.location.origin  + image[1]}/>
+              <img
+                className="item_img"
+                src={window.location.origin  + image[1]}
+                alt=""
+              />
 
             </div>
           </div>
           <div>
             <div className="slide-image">
-            <img className="item_img" src={window.location.origin  + image[2]}/>
-
+              <img
+                className="item_img"
+                src={window.location.origin  + image[2]}
+                alt=""
+              />
             </div>
           </div>
         </Slider>
