@@ -33,15 +33,16 @@ const Header = () => {
           ONLINE SUPPORT 24/7
         </div>
       </div>
-
       {/* Logo + Search + Social Media Icons */}
       <div className="row row-logo">
         <div className="col">
+          <a href="/">
           <img
             className="logo"
             src="https://i.ibb.co/mNns8MQ/logo.png"
             alt="logo.png"
           ></img>
+          </a>
         </div>
         <div className="col col-search">
           <input className="search-bar" placeholder="Search"></input>
