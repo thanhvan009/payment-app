@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import {StyledCategory} from './StyledCategory'
 
 
@@ -15,17 +15,17 @@ export default class CategoryBanner extends Component
         return  <StyledCategory>
         <div className="container_category">
            <div className="category">  
-             <img className="image_category" src={window.location.origin+ images[0]}  /> 
+             <img className="image_category" src={window.location.origin+ images[0]} alt=""  /> 
              <button className="btn_category">Click here</button>  
            </div>
 
            <div className="category">   
-           <img className="image_category" src={window.location.origin+ images[1]}  />    
+           <img className="image_category" src={window.location.origin+ images[1]} alt="" />    
            <button className="btn_category">Click here</button>  
     
            </div>
            <div className="category">   
-           <img className="image_category" src={window.location.origin+ images[2]}  />   
+           <img className="image_category" src={window.location.origin+ images[2]} alt="" />   
            <button className="btn_category">Click here</button>      
            </div>
         </div>
