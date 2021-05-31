@@ -5,10 +5,12 @@ import HomePage from "./containers/Homepage";
 import InfoDetail from "./containers/InfoDetail";
 import Success from "./containers/Checkout/Success";
 import Error from "./containers/Checkout/Error";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <Layout>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <HomePage />
