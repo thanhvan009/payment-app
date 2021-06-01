@@ -9,7 +9,11 @@ interface LayoutProps {
 const Layout = (props: LayoutProps) => {
   const { children } = props;
   const pathname = window.location.pathname
-  if (/^\/sign-up(?=\/|$)/i.test(pathname) || /^\/sign-in(?=\/|$)/i.test(pathname)) {
+  if (
+    /^\/sign-up(?=\/|$)/i.test(pathname) || 
+    /^\/sign-in(?=\/|$)/i.test(pathname) ||
+    /^\/login(?=\/|$)/i.test(pathname)
+  ) {
     return (
       <StyledSignIn >
         <div className="main-content">{children}</div>
