@@ -18,15 +18,15 @@ export class Product extends Component {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   };
-  componentDidMount() {
-    fetch(this.url, this.requestOptions)
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
-      .then((data) => this.setState({ productList: data }))
-      .catch((err) => console.log(err));
-  }
+//   componentDidMount() {
+//     fetch(this.url, this.requestOptions)
+//       .then((res) => {
+//         console.log(res);
+//         return res.json();
+//       })
+//       .then((data) => this.setState({ productList: data }))
+//       .catch((err) => console.log(err));
+//   }
   render() {
     return (
       <StyledProduct>
