@@ -91,6 +91,11 @@ export const StyledHeader = styled.div`
     }
   }
 
+  .profile {
+    border-bottom: 1px solid #a6a6a6;
+    display: flex;
+  }
+
   .user {
     display: block;
     width: 45px;

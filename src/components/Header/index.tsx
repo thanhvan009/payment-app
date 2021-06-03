@@ -50,10 +50,10 @@ const Header = () => {
             </Link>
           </div>
         }
-        {isUserLogined && <>
+        {isUserLogined && <div className="profile">
           <span className="user">John</span>
           <span className="logout" onClick={onLogout}><FontAwesomeIcon icon={faSignOutAlt} className="icon" /></span>
-          </>
+          </div>
         }
         
       </div>
