@@ -1,35 +1,64 @@
 import { Component } from "react";
-import {StyledCategory} from './StyledCategory'
+import {StyledCategory} from './StyledCategory';
+import { Link } from "react-router-dom";
 
+export default class CategoryBanner extends Component {
+  render() {
+    const images= [
+      '/images/category_1_new.jpg',
+      '/images/category_2_new.jpg',
+      '/images/category_3_new.jpg'
+    ];
+    const productList = [
+      {
+        id: 1,
+        name: 'Coat',
+        price: '10',
+        image: '/images/category_1_new.jpg'
+      },
+      {
+        id: 2,
+        name: 'Dress',
+        price: '20',
+        image: '/images/category_2_new.jpg'
+      },
+      {
+        id: 3,
+        name: 'Blouse',
+        price: '30',
+        image: '/images/category_3_new.jpg'
+      },
+    ];
 
-export default class CategoryBanner extends Component
-{
-
-    render()
-    {
-        const images= [
-            '/images/category_1_new.jpg',
-            '/images/category_2_new.jpg',
-            '/images/category_3_new.jpg'
-        ]
-        return  <StyledCategory>
+    return (
+      <StyledCategory>
         <div className="container_category">
-           <div className="category">  
-             <img className="image_category" src={window.location.origin+ images[0]} alt=""  /> 
-             <button className="btn_category">Click here</button>  
-           </div>
-
-           <div className="category">   
-           <img className="image_category" src={window.location.origin+ images[1]} alt="" />    
-           <button className="btn_category">Click here</button>  
-    
-           </div>
-           <div className="category">   
-           <img className="image_category" src={window.location.origin+ images[2]} alt="" />   
-           <button className="btn_category">Click here</button>      
-           </div>
+          {
+            productList.map(product=>(
+              <div className="category">  
+                <img
+                  className="image_category"
+                  src={window.location.origin+ product.image}
+                  alt=""
+                />
+                <Link
+                  to={{
+                    pathname: "info-detail",
+                    state: {
+                      id: product.id,
+                      name: product.name,
+                      price: product.price,
+                      image: product.image,
+                    },
+                  }}
+                >
+                  <button className="btn_category">Click here</button>  
+                </Link>
+              </div>
+            ))
+          }
         </div>
-        </StyledCategory>
-        ;
-    }
+      </StyledCategory>
+    );
+  }
 }

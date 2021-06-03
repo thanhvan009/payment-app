@@ -9,13 +9,14 @@ type ProductInfo = {
   id: number;
   name: string;
   price: number;
+  image: string;
 };
 
 function InfoDetail() {
   // const [product, setProduct] = useState({ name: "", id: 0, price: 0 });
   const history = useHistory();
   const location = useLocation();
-  const { id, name, price } = location.state as ProductInfo;
+  const { id, name, price, image } = location.state as ProductInfo;
 
   // const url = "http://localhost:5000/api/product";
   // useEffect(() => {
@@ -43,7 +44,7 @@ function InfoDetail() {
                 <div
                   className="image"
                   style={{
-                    backgroundImage: `url("${window.location.origin}/images/product1.png")`,
+                    backgroundImage: `url(${window.location.origin}${image})`,
                   }}
                 ></div>
               </div>
