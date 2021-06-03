@@ -3,6 +3,7 @@ import Paypal from "./../../components/Paypal";
 import { OnApproveData } from "@paypal/paypal-js/types/components/buttons";
 import { useHistory, useLocation } from "react-router-dom";
 import Stripe from "./../../components/Stripe";
+import Layout from "../../components/Layout";
 
 type ProductInfo = {
   id: number;
@@ -33,67 +34,69 @@ function InfoDetail() {
   };
 
   return (
-    <StyledInfoDetail>
-      <div className="container">
-        <div className="content">
-          <div className="left-content">
-            <div className="image-container">
-              <div
-                className="image"
-                style={{
-                  backgroundImage: `url("${window.location.origin}/images/product1.png")`,
-                }}
-              ></div>
+    <Layout>
+      <StyledInfoDetail>
+        <div className="container">
+          <div className="content">
+            <div className="left-content">
+              <div className="image-container">
+                <div
+                  className="image"
+                  style={{
+                    backgroundImage: `url("${window.location.origin}/images/product1.png")`,
+                  }}
+                ></div>
+              </div>
             </div>
-          </div>
-          <div className="right-content">
-            <div className="title">
-              <p>{name}</p>
-            </div>
-            <div className="rating">
-              <img
-                src={window.location.origin + "/images/star.svg"}
-                className="star"
-                alt="star"
-              />
-              <img
-                src={window.location.origin + "/images/star.svg"}
-                className="star"
-                alt="star"
-              />
-              <img
-                src={window.location.origin + "/images/star.svg"}
-                className="star"
-                alt="star"
-              />
-              <img
-                src={window.location.origin + "/images/star.svg"}
-                className="star"
-                alt="star"
-              />
-              <img
-                src={window.location.origin + "/images/star.svg"}
-                className="star"
-                alt="star"
-              />
-            </div>
-            <div className="price">
-              Price: <span>${price}</span>
-            </div>
-            <div className="info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-              totam rerum fugit, architecto asperiores ipsam placeat possimus in
-              voluptatem? Repudiandae officia magni at nisi? Ullam voluptate
-              harum officia aliquam eligendi.
-            </div>
-            <div className="payment">
-              <Stripe product={{ id, name, price }} />
-              <Paypal onApprove={onApprove} />
+            <div className="right-content">
+              <div className="title">
+                <p>{name}</p>
+              </div>
+              <div className="rating">
+                <img
+                  src={window.location.origin + "/images/star.svg"}
+                  className="star"
+                  alt="star"
+                />
+                <img
+                  src={window.location.origin + "/images/star.svg"}
+                  className="star"
+                  alt="star"
+                />
+                <img
+                  src={window.location.origin + "/images/star.svg"}
+                  className="star"
+                  alt="star"
+                />
+                <img
+                  src={window.location.origin + "/images/star.svg"}
+                  className="star"
+                  alt="star"
+                />
+                <img
+                  src={window.location.origin + "/images/star.svg"}
+                  className="star"
+                  alt="star"
+                />
+              </div>
+              <div className="price">
+                Price: <span>${price}</span>
+              </div>
+              <div className="info">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
+                totam rerum fugit, architecto asperiores ipsam placeat possimus in
+                voluptatem? Repudiandae officia magni at nisi? Ullam voluptate
+                harum officia aliquam eligendi.
+              </div>
+              <div className="payment">
+                <Stripe product={{ id, name, price }} />
+                <Paypal onApprove={onApprove} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </StyledInfoDetail>
+      </StyledInfoDetail>
+    </Layout>
   );
 }
 
