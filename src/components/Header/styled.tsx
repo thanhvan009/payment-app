@@ -62,20 +62,32 @@ export const StyledHeader = styled.div`
     box-shadow: 0px 0px 2px #888;
     padding: 0.5em 0.5em;
     margin: 0 3px;
+    width: 40px;
+    height: 40px;
   }
 
   .icon-square {
     border: 1px solid #a6a6a6;
-    height: 39px;
     padding: 0 15px;
+    padding: 0 9px;
+    width: 40px;
+    height: 40px;
   }
 
   .search-bar {
     width: 80%;
-    height: 35px;
+    height: 40px;
   }
 
   .row-navigation {
     background-color: black;
+  }
+
+  .login-wrap {
+    display: flex;
+    border-bottom: 1px solid #a6a6a6;
+    button {
+      margin: 5px;
+    }
   }
 `;

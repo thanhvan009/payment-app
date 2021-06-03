@@ -11,8 +11,8 @@ import Error from "./containers/Checkout/Error";
 import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <ScrollToTop />
         <Switch>
           <Route exact path="/">
@@ -33,8 +33,8 @@ function App() {
             <Error />
           </Route>
         </Switch>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   );
 }
 

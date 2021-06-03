@@ -7,13 +7,15 @@ import {
   faClock,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Button } from 'antd';
 import {
   faFacebook,
   faTwitter,
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
   return (
@@ -31,6 +33,14 @@ const Header = () => {
         <div className="col col-right">
           <FontAwesomeIcon icon={faClock} className="icon" />
           ONLINE SUPPORT 24/7
+        </div>
+        <div className="login-wrap">
+          <Link to="/sign-up">
+            <Button type="primary">Sign up</Button>
+          </Link>
+          <Link to="/sign-in">
+            <Button>Sign in</Button>
+          </Link>
         </div>
       </div>
       {/* Logo + Search + Social Media Icons */}
