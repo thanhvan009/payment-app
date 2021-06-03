@@ -1,6 +1,6 @@
 import {
   Form, Input, Button,
-  Radio, DatePicker
+  DatePicker
 } from 'antd';
 import { StyledFormSignUp } from './styled';
 import Layout from "../../components/Layout";

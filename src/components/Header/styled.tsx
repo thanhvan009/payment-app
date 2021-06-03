@@ -90,4 +90,27 @@ export const StyledHeader = styled.div`
       margin: 5px;
     }
   }
+
+  .user {
+    display: block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border: 1px solid #ddd;
+    line-height: 40px;
+    border-radius: 45px;
+    color: red;
+  }
+
+  .logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
