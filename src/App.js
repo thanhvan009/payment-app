@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./containers/Homepage";
 import SignUp from "./containers/SignUp";
+import SignIn from "./containers/Sign";
 import InfoDetail from "./containers/InfoDetail";
 import Success from "./containers/Checkout/Success";
 import Error from "./containers/Checkout/Error";
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/sign-in">
+            <SignIn />
           </Route>
           <Route path="/sign-up">
             <SignUp />
