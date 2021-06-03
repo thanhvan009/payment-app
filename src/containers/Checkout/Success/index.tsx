@@ -1,6 +1,7 @@
+import Layout from "../../../components/Layout";
 import { StyledSuccess } from './styled';
 function Success() {
-    return (<StyledSuccess>Checkout Successfully</StyledSuccess>);
+    return (<Layout><StyledSuccess>Checkout Successfully</StyledSuccess></Layout>);
 }
 
 export default Success;
