@@ -1,5 +1,5 @@
 import {
-  Form, Input, Button, Select,
+  Form, Input, Button,
   Radio, DatePicker, Checkbox
 } from 'antd';
 import { StyledFormSignUp } from './styled';

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./containers/Homepage";
 import SignUp from "./containers/SignUp";
-import SignIn from "./containers/Sign";
+import SignIn from "./containers/SignIn";
 import InfoDetail from "./containers/InfoDetail";
 import Success from "./containers/Checkout/Success";
 import Error from "./containers/Checkout/Error";
