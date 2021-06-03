@@ -9,19 +9,17 @@ export const StyledInfoDetail = styled.div`
 
   .content {
     height: 100%;
-    width: 60%;
-    margin: auto;
     background-color: #ffffff;
     display: flex;
   }
 
   .left-content {
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100%;
   }
 
   .image-container {
-    height: 60%;
+    height: 50%;
     overflow: hidden;
     position: relative;
     margin: 40px 20px 0;
