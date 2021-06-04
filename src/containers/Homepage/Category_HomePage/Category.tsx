@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 
 export default class CategoryBanner extends Component {
   render() {
-    const images= [
-      '/images/category_1_new.jpg',
-      '/images/category_2_new.jpg',
-      '/images/category_3_new.jpg'
-    ];
     const productList = [
       {
         id: 1,

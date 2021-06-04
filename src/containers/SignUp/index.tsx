@@ -1,10 +1,11 @@
 import {
   Form, Input, Button,
-  Radio, DatePicker
+  DatePicker
 } from 'antd';
 import { StyledFormSignUp } from './styled';
 import Layout from "../../components/Layout";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import {signInApi} from '../../apis/userApi';
 
 const layoutForm = {
   labelCol: { span: 7 },
@@ -16,7 +17,30 @@ const layoutSubmit = {
   wrapperCol: { span: 24 },
 };
 
+
 function SignUp() {
+  const history = useHistory();
+  const [form] = Form.useForm();
+  const onFinish = () => {
+    form
+      .validateFields()
+      .then(values => {
+        signInApi
+          .then(res=> {
+            if (res) {
+              localStorage.setItem('user_info', JSON.stringify(res));
+              history.push('/');
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
+        
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
   return (
     <Layout>
       <StyledFormSignUp>
@@ -32,6 +56,8 @@ function SignUp() {
         <Form
           {...layoutForm}
           name="register"
+          onFinish={onFinish}
+          form={form}
         >
           <div className="block-info">
             <h4 className="subtitle">Your Personal Details</h4>
@@ -55,7 +81,7 @@ function SignUp() {
               <Form.Item
                 label="Full name"
                 name="fullName"
-                rules={[{required: true, message: 'Please input your full name!'}]}
+                // rules={[{required: true, message: 'Please input your full name!'}]}
               >
                 <Input />
               </Form.Item>

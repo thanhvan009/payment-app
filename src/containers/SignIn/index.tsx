@@ -1,7 +1,8 @@
 import { Form, Input, Button} from 'antd';
 import {StyledFormSignIn} from './styled';
 import Layout from "../../components/Layout";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import {signInApi} from '../../apis/userApi';
 
 const layout = {
   labelCol: { span: 6 },
@@ -13,6 +14,28 @@ const tailLayout = {
 };
 
 function SignIn() {
+  const history = useHistory();
+  const [form] = Form.useForm();
+  const onFinish = () => {
+    form
+      .validateFields()
+      .then(values => {
+        signInApi
+          .then(res=> {
+            if (res) {
+              localStorage.setItem('user_info', JSON.stringify(res));
+              history.push('/');
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
+        
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
   return(
     <Layout>
       <StyledFormSignIn>
@@ -29,7 +52,9 @@ function SignIn() {
           {...layout}
           name="signIn"
           layout="vertical"
-          >
+          onFinish={onFinish}
+          form={form}
+        >
           <div className="form-info">
             <Form.Item
               label="Username"

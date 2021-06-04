@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './../Header';
 import Footer from './../Footer';
 import { StyledContainer, StyledSignIn } from './styled';
+
 interface LayoutProps {
   children: React.ReactNode;
 }
