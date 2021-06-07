@@ -2,11 +2,13 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import { StyledProduct } from "./StyledProduct";
 import { API_URL } from "./../../../constants/index";
+import { productListMock } from "./mockData";
 
 type ProductInfo = {
   id: any;
   price: number;
   name: string;
+  image: string;
 };
 export class Product extends Component {
   state: { productList: ProductInfo[] } = {
@@ -18,15 +20,20 @@ export class Product extends Component {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   };
-//   componentDidMount() {
-//     fetch(this.url, this.requestOptions)
-//       .then((res) => {
-//         console.log(res);
-//         return res.json();
-//       })
-//       .then((data) => this.setState({ productList: data }))
-//       .catch((err) => console.log(err));
-//   }
+  componentWillMount() {
+    // Hard code for now
+    this.setState({ productList: productListMock });
+  }
+
+  componentDidMount() {
+    fetch(this.url, this.requestOptions)
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => this.setState({ productList: data }))
+      .catch((err) => console.log(err));
+  }
   render() {
     return (
       <StyledProduct>
@@ -36,7 +43,7 @@ export class Product extends Component {
               <div className="products" key={product.id}>
                 <img
                   className="product_image"
-                  src={`${window.location.origin}/images/product1.png`}
+                  src={`${window.location.origin}${product.image}`}
                   alt="product"
                 />
                 <p className="product_name">{product.name}</p>
@@ -49,6 +56,7 @@ export class Product extends Component {
                         id: product.id,
                         name: product.name,
                         price: product.price,
+                        image: product.image,
                       },
                     }}
                   >

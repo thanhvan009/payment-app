@@ -6,16 +6,24 @@ import {
   faMoneyBill,
   faClock,
   faSearch,
+  faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Button } from 'antd';
 import {
   faFacebook,
   faTwitter,
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+  const isUserLogined = localStorage.getItem('user_info');
+  const onLogout = () => {
+    localStorage.removeItem('user_info');
+    window.location.reload();
+  }
   return (
     <StyledHeader >
       {/* Top message */}
@@ -32,6 +40,22 @@ const Header = () => {
           <FontAwesomeIcon icon={faClock} className="icon" />
           ONLINE SUPPORT 24/7
         </div>
+        {
+          !isUserLogined && <div className="login-wrap">
+            <Link to="/sign-up">
+              <Button type="primary">Sign up</Button>
+            </Link>
+            <Link to="/sign-in">
+              <Button>Sign in</Button>
+            </Link>
+          </div>
+        }
+        {isUserLogined && <div className="profile">
+          <span className="user">John</span>
+          <span className="logout" onClick={onLogout}><FontAwesomeIcon icon={faSignOutAlt} className="icon" /></span>
+          </div>
+        }
+        
       </div>
       {/* Logo + Search + Social Media Icons */}
       <div className="row row-logo">

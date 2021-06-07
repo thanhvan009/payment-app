@@ -9,23 +9,20 @@ export const StyledInfoDetail = styled.div`
 
   .content {
     height: 100%;
-    width: 60%;
-    margin: auto;
     background-color: #ffffff;
     display: flex;
   }
 
   .left-content {
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100%;
   }
 
   .image-container {
-    height: 60%;
+    height: 50%;
     overflow: hidden;
     position: relative;
-    margin: 40px 20px 0;
-}
+  }
   .image {
     width: 100%;
     height: 100%;
@@ -42,16 +39,19 @@ export const StyledInfoDetail = styled.div`
   .right-content {
     flex-basis: 60%;
     height: 100%;
-    margin: 20px;
+    margin: 0 20px;
   }
 
   .title {
     font-size: 20px;
     font-weight: bold;
+    p {
+      margin-bottom: 5px;
+    }
   }
 
   .price {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 15px;
     width: auto;
     background-color: #fafafa;
@@ -65,17 +65,21 @@ export const StyledInfoDetail = styled.div`
   }
 
   .info {
-    margin-top: 30px;
-    padding: 0 20px;
+    margin-top: 20px;
   }
 
   .payment {
     margin-top: 30px;
-    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    > div {
+      width: 49%;
+      padding-left: 10px;
+      height: 45px;
+    }
     button {
       font-size: 14px;
-      height: 40px;
-      width: 100%;
+      height: 45px;
       font-weight: bold;
       text-transform: uppercase;
       padding: 10px;
@@ -85,7 +89,8 @@ export const StyledInfoDetail = styled.div`
       outline: none;
       color: white;
       border-radius: 5px;
-      margin: 10px 0;
+      margin: 0;
+      width: 45%;
       :hover {
         background-color: #ff5e5e;
       }

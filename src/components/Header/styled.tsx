@@ -62,20 +62,60 @@ export const StyledHeader = styled.div`
     box-shadow: 0px 0px 2px #888;
     padding: 0.5em 0.5em;
     margin: 0 3px;
+    width: 40px;
+    height: 40px;
   }
 
   .icon-square {
     border: 1px solid #a6a6a6;
-    height: 39px;
     padding: 0 15px;
+    padding: 0 9px;
+    width: 40px;
+    height: 40px;
   }
 
   .search-bar {
     width: 80%;
-    height: 35px;
+    height: 40px;
   }
 
   .row-navigation {
     background-color: black;
+  }
+
+  .login-wrap {
+    display: flex;
+    border-bottom: 1px solid #a6a6a6;
+    button {
+      margin: 5px;
+    }
+  }
+
+  .profile {
+    border-bottom: 1px solid #a6a6a6;
+    display: flex;
+  }
+
+  .user {
+    display: block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border: 1px solid #ddd;
+    line-height: 40px;
+    border-radius: 45px;
+    color: red;
+  }
+
+  .logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
